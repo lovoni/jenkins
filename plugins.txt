@@ -1,1 +1,3 @@
-blueocean
+blueocean:1.2.0
+maven-plugin:3.5.0
+ant:1.3
