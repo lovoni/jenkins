@@ -14,7 +14,6 @@ RUN tar xzf /tmp/apache-maven.tar.gz -C /opt/ 			&& \
 	ln -s /opt/maven/bin/mvn /usr/local/bin 			&& \
 	rm -f /tmp/apache-maven.tar.gz
 
-VOLUME ~/.m2/settings.xml
 ENV MAVEN_HOME /opt/maven
 
 # drop back to the regular jenkins user - good practice
