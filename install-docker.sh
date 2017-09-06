@@ -20,9 +20,12 @@ add-apt-repository "deb [arch=amd64] $MY_DOCKER_EE_URL xenial stable"
 
 
 # INSTALL DOCKER EE
-echo "=====  Installing docker-ee package..."
-apt-get update; 
-apt-get install -y docker-ce
+echo "=====  Installing docker package..."
+# apt-get update; 
+# apt-get install -y docker-ce
+
+curl -fsSL get.docker.com -o /tmp/get-docker.sh
+sh /tmp/get-docker.sh
 usermod -aG docker $USER
 
 # CONFIGURE DOCKER HOST AND ENGINE
