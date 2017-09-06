@@ -7,7 +7,7 @@ USER root
 
 #Install Docker
 COPY install-docker.sh /tmp/install-docker.sh
-RUN chmod+x /tmp/install-docker.sh && /tmp/install-docker.sh
+RUN chmod +x /tmp/install-docker.sh && /tmp/install-docker.sh
 
 # install maven
 RUN wget --no-verbose -O /tmp/apache-maven.tar.gz http://archive.apache.org/dist/maven/maven-3/${MAVEN_VERSION}/binaries/apache-maven-${MAVEN_VERSION}-bin.tar.gz
