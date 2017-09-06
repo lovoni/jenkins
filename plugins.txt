@@ -1,8 +1,1 @@
 blueocean
-build-pipeline-plugin
-maven-plugin
-docker-workflow
-pipeline-maven
-pipeline-utility-steps
-jira-steps
-slack
