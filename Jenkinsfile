@@ -10,6 +10,7 @@ pipeline {
       steps {
         sh 'mvn --version'
         echo 'Hello!'
+        tool 'docker'
       }
     }
   }
