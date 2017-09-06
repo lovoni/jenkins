@@ -5,6 +5,10 @@ ARG MAVEN_VERSION=3.5.0
 # if we want to install via apt
 USER root
 
+#Install Docker
+COPY install-docker.sh /tmp/install-docker.sh
+RUN chmod+x /tmp/install-docker.sh && /tmp/install-docker.sh
+
 # install maven
 RUN wget --no-verbose -O /tmp/apache-maven.tar.gz http://archive.apache.org/dist/maven/maven-3/${MAVEN_VERSION}/binaries/apache-maven-${MAVEN_VERSION}-bin.tar.gz
 # verify checksum
@@ -19,9 +23,5 @@ ENV MAVEN_HOME /opt/maven
 # drop back to the regular jenkins user - good practice
 COPY plugins.txt /usr/share/jenkins/ref/plugins.txt
 RUN /usr/local/bin/install-plugins.sh < /usr/share/jenkins/ref/plugins.txt
-
-#Install Docker
-COPY install-docker.sh /tmp/install-docker.sh
-RUN chmod+x /tmp/install-docker.sh && /tmp/install-docker.sh
 
 USER jenkins
