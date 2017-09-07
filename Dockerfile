@@ -1,4 +1,4 @@
-FROM jenkins/jenkins:2.76
+FROM jenkins/jenkins:2.77
 MAINTAINER lbognini@gmail.com
 
 ARG MAVEN_VERSION=3.5.0
