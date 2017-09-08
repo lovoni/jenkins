@@ -6,3 +6,4 @@ pipeline-maven
 pipeline-utility-steps
 jira-steps
 slack
+sonar
