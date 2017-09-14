@@ -11,6 +11,5 @@ nested-view
 ssh
 tasks
 ansible
-cucumber
 cucumber-reports
 cucumber-slack-notifier
