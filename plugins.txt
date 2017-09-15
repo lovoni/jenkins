@@ -13,3 +13,4 @@ tasks
 ansible
 cucumber-reports
 cucumber-slack-notifier
+envinject

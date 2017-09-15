@@ -21,6 +21,9 @@ RUN tar xzf /tmp/apache-maven.tar.gz -C /opt/ 			&& \
 
 ENV MAVEN_HOME /opt/maven
 
+COPY jq-linux-x86_64 ~/tools/
+
+
 # drop back to the regular jenkins user - good practice
 COPY plugins.txt /usr/share/jenkins/ref/plugins.txt
 RUN /usr/local/bin/install-plugins.sh < /usr/share/jenkins/ref/plugins.txt
