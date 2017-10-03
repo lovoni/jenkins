@@ -14,3 +14,7 @@ ansible
 cucumber-reports
 cucumber-slack-notifier
 envinject
+promoted-builds
+emailext-template
+config-file-provider
+gitlab-plugin
