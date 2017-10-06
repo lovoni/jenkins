@@ -1,9 +1,10 @@
 blueocean
-build-pipeline-plugin
 maven-plugin
 docker-workflow
+build-pipeline-plugin
 pipeline-maven
 pipeline-utility-steps
+config-file-provider
 jira-steps
 slack
 sonar
@@ -16,5 +17,6 @@ cucumber-slack-notifier
 envinject
 promoted-builds
 emailext-template
-config-file-provider
 gitlab-plugin
+jobgenerator
+confluence-publisher
