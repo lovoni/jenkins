@@ -4,7 +4,6 @@ build-pipeline-plugin
 config-file-provider
 confluence-publisher
 cucumber-reports
-cucumber-slack-notifier
 docker-workflow
 emailext-template
 envinject
@@ -17,7 +16,6 @@ nested-view
 pipeline-maven
 pipeline-utility-steps
 promoted-builds
-slack
 sonar
 ssh
 tasks
