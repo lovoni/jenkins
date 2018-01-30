@@ -21,8 +21,8 @@ RUN tar xzf /tmp/apache-maven.tar.gz -C /opt/ 			&& \
 
 ENV MAVEN_HOME /opt/maven
 
-COPY jq-linux-x86_64 ~/tools/ 
-RUN chmod 555 ~/tools/jq-linux-x86_64
+COPY jq-linux-x86_64 $JENKINS_HOME/tools/ 
+RUN chmod 555 $JENKINS_HOME/tools/jq-linux-x86_64
 
 
 # drop back to the regular jenkins user - good practice
