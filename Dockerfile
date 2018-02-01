@@ -1,7 +1,7 @@
-FROM jenkins/jenkins:2.93
+FROM jenkins/jenkins:2.104
 MAINTAINER lbognini@gmail.com
 
-ARG MAVEN_VERSION=3.5.0
+ARG MAVEN_VERSION=3.5.2
 # if we want to install via apt
 USER root
 
