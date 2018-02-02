@@ -2,7 +2,6 @@ ansible
 blueocean
 build-pipeline-plugin
 config-file-provider
-confluence-publisher
 cucumber-reports
 docker-workflow
 doktor
