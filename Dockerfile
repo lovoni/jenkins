@@ -31,6 +31,6 @@ RUN /usr/local/bin/install-plugins.sh < /usr/share/jenkins/ref/plugins.txt
 
 # Install mermaid and PhantomJS
 RUN wget --no-verbose -O /usr/bin/phantomjs https://github.com/ariya/phantomjs/releases/download/2.1.3/phantomjs && \
-    apt-get install npm && npm install mermaid 
+    apt-get install nodejs-legacy && npm install mermaid 
 
 USER jenkins
