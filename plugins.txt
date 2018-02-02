@@ -5,6 +5,7 @@ config-file-provider
 confluence-publisher
 cucumber-reports
 docker-workflow
+doktor
 emailext-template
 envinject
 gitlab-plugin
