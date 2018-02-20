@@ -15,6 +15,7 @@ maven-plugin
 mattermost
 nested-view
 pipeline-maven
+pipeline-aws
 pipeline-utility-steps
 promoted-builds
 rundeck
