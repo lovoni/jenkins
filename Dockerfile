@@ -30,8 +30,12 @@ COPY plugins.txt /usr/share/jenkins/ref/plugins.txt
 RUN /usr/local/bin/install-plugins.sh < /usr/share/jenkins/ref/plugins.txt
 
 # Install mermaid and PhantomJS
-RUN wget --no-verbose -O /usr/bin/phantomjs https://github.com/ariya/phantomjs/releases/download/2.1.3/phantomjs && \
-        curl -sL https://deb.nodesource.com/setup_6.x | bash -  && \
+RUN wget --no-verbose -O /tmp/phantomjs.tar.bz2 https://bitbucket.org/ariya/phantomjs/downloads/phantomjs-2.1.1-linux-x86_64.tar.bz2 && \
+	tar xzf /tmp/phantomjs.tar.bz2 -C /opt/ && \
+	ln -s /opt/phantomjs-2.1.1-linux-x86_64/bin/phantomjs /usr/bin/phantomjs && \
+	rm -f /tmp/phantomjs.tar.bz2
+
+RUN  curl -sL https://deb.nodesource.com/setup_6.x | bash -  && \
         apt-get install -y nodejs && npm install mermaid 
 
 USER jenkins
