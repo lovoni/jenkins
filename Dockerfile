@@ -35,7 +35,7 @@ RUN  curl -sL https://deb.nodesource.com/setup_6.x | bash -  && \
         apt-get install -y nodejs && npm install mermaid 
 
 RUN apt-get install unzip python \
-	&& RUN curl -O https://bootstrap.pypa.io/get-pip.py  \
+	&& curl -O https://bootstrap.pypa.io/get-pip.py  \
     && python get-pip.py --user  \
 	&& ~/.local/bin/pip install awscli
 
