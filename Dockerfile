@@ -25,15 +25,11 @@ COPY jq-linux-x86_64 $JENKINS_HOME/tools/
 RUN chmod 555 $JENKINS_HOME/tools/jq-linux-x86_64
 
 
-# drop back to the regular jenkins user - good practice
-COPY plugins.txt /usr/share/jenkins/ref/plugins.txt
-RUN /usr/local/bin/install-plugins.sh < /usr/share/jenkins/ref/plugins.txt
-
 # Install mermaid and PhantomJS
-RUN wget --no-verbose -O /tmp/phantomjs.tar.bz2 https://bitbucket.org/ariya/phantomjs/downloads/phantomjs-2.1.1-linux-x86_64.tar.bz2 && \
-	tar xzf /tmp/phantomjs.tar.bz2 -C /opt/ && \
-	ln -s /opt/phantomjs-2.1.1-linux-x86_64/bin/phantomjs /usr/bin/phantomjs && \
-	rm -f /tmp/phantomjs.tar.bz2
+# RUN wget --no-verbose -O /tmp/phantomjs.tar.bz2 https://bitbucket.org/ariya/phantomjs/downloads/phantomjs-2.1.1-linux-x86_64.tar.bz2 && \
+#	tar xzf /tmp/phantomjs.tar.bz2 -C /opt/ && \
+#	ln -s /opt/phantomjs-2.1.1-linux-x86_64/bin/phantomjs /usr/bin/phantomjs && \
+#	rm -f /tmp/phantomjs.tar.bz2
 
 RUN  curl -sL https://deb.nodesource.com/setup_6.x | bash -  && \
         apt-get install -y nodejs && npm install mermaid 
@@ -42,5 +38,9 @@ RUN apt-get install unzip python \
 	&& RUN curl -O https://bootstrap.pypa.io/get-pip.py  \
     && python get-pip.py --user  \
 	&& ~/.local/bin/pip install awscli
+
+# drop back to the regular jenkins user - good practice
+COPY plugins.txt /usr/share/jenkins/ref/plugins.txt
+RUN /usr/local/bin/install-plugins.sh < /usr/share/jenkins/ref/plugins.txt
 
 USER jenkins
