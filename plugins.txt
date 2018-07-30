@@ -14,6 +14,7 @@ jobgenerator
 maven-plugin
 mattermost
 nested-view
+oic-auth
 pipeline-maven
 pipeline-aws
 pipeline-utility-steps
