@@ -7,6 +7,7 @@ cucumber-reports
 docker-workflow
 doktor
 emailext-template
+embeddable-build-status
 envinject
 gitlab-plugin
 jira-steps
