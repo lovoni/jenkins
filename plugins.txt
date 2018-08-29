@@ -24,3 +24,4 @@ rundeck
 sonar
 ssh
 tasks
+thinBackup
