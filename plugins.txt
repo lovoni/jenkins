@@ -12,6 +12,7 @@ envinject
 gitlab-plugin
 jira-steps
 jobgenerator
+kubernetes-cd
 maven-plugin
 mattermost
 nested-view
