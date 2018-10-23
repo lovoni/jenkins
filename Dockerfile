@@ -32,7 +32,7 @@ RUN chmod 555 $JENKINS_HOME/tools/jq-linux-x86_64
 #	rm -f /tmp/phantomjs.tar.bz2
 
 RUN  curl -sL https://deb.nodesource.com/setup_6.x | bash -  && \
-        apt-get install -y nodejs && npm install mermaid 
+        apt-get install -y nodejs && npm install mermaid && npm install serverless
 
 RUN apt-get install unzip python \
 	&& curl -O https://bootstrap.pypa.io/get-pip.py  \
