@@ -13,6 +13,7 @@ gitlab-plugin
 jira-steps
 jobgenerator
 kubernetes-cd
+kubernetes-pipeline-devops-steps
 maven-plugin
 mattermost
 nested-view
