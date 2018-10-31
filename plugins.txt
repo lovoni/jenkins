@@ -1,4 +1,9 @@
 ansible
+aws-codebuild
+aws-lambda
+aws-parameter-store
+aws-sam
+badge
 blueocean
 build-pipeline-plugin
 config-file-provider
