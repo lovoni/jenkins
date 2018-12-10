@@ -10,6 +10,6 @@ sh /tmp/get-docker.sh
 
 usermod -aG docker jenkins
 
-service docker start
+#service docker start
 
 
