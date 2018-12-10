@@ -1,11 +1,14 @@
 ansible
+aws-cloudformation
 aws-codebuild
 aws-lambda
 aws-parameter-store
 aws-sam
+awseb-deployment-plugin
 badge
 blueocean
 build-pipeline-plugin
+codedeploy
 config-file-provider
 confluence-publisher
 cucumber-reports
@@ -28,6 +31,7 @@ pipeline-aws
 pipeline-utility-steps
 promoted-builds
 rundeck
+serverless
 sonar
 ssh
 tasks
