@@ -31,14 +31,16 @@ RUN chmod 555 $JENKINS_HOME/tools/jq-linux-x86_64
 #	ln -s /opt/phantomjs-2.1.1-linux-x86_64/bin/phantomjs /usr/bin/phantomjs && \
 #	rm -f /tmp/phantomjs.tar.bz2
 
-RUN curl -sL https://deb.nodesource.com/setup_6.x | bash -  && \
-    apt-get install -y nodejs    \
-    && npm install -g mermaid    \
-    && npm install -g serverless \
-    && npm install -g aws-cdk
+
+#RUN curl -sL https://deb.nodesource.com/setup_6.x | bash -  && \
+RUN curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -  && \
+    apt-get install -y nodejs \
+    && npm i -g mermaid       \
+    && npm i -g serverless    \
+    && npm i -g aws-cdk
 
 RUN apt-get install unzip python \
-	&& curl -O https://bootstrap.pypa.io/get-pip.py  \
+	&& curl -O https://bootstrap.pypa.io/get-pip.py \
     && python get-pip.py --user  \
 	&& ~/.local/bin/pip install awscli
 
