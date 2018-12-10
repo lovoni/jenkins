@@ -33,7 +33,7 @@ RUN chmod 555 $JENKINS_HOME/tools/jq-linux-x86_64
 
 
 #RUN curl -sL https://deb.nodesource.com/setup_6.x | bash -  && \
-RUN curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -  && \
+RUN curl -sL https://deb.nodesource.com/setup_10.x | bash -  && \
     apt-get install -y nodejs \
     && npm i -g mermaid       \
     && npm i -g serverless    \
