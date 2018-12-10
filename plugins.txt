@@ -1,5 +1,4 @@
 ansible
-aws-cloudformation
 aws-codebuild
 aws-lambda
 aws-parameter-store
@@ -31,7 +30,6 @@ pipeline-aws
 pipeline-utility-steps
 promoted-builds
 rundeck
-serverless
 sonar
 ssh
 tasks
