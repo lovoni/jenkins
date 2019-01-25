@@ -11,6 +11,10 @@ RUN chmod +x /tmp/install-docker.sh
 RUN /tmp/install-docker.sh
 
 # Install python and pip
+RUN 	apt-get install -y make build-essential libssl-dev zlib1g-dev libbz2-dev \
+	&& libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev libncursesw5-dev \
+	&& xz-utils tk-dev libffi-dev liblzma-dev
+
 RUN cd /tmp && wget https://www.python.org/ftp/python/3.6.8/Python-3.6.8.tgz \
     	&& tar xvf Python-3.6.8.tgz \
 	&& cd Python-3.6.8 \
@@ -25,8 +29,8 @@ RUN wget --no-verbose -O /tmp/apache-maven.tar.gz http://archive.apache.org/dist
 # verify checksum
 RUN echo "35c39251d2af99b6624d40d801f6ff02 /tmp/apache-maven.tar.gz" | md5sum -c
 RUN tar xzf /tmp/apache-maven.tar.gz -C /opt/ 			&& \
-	ln -s /opt/apache-maven-${MAVEN_VERSION} /opt/maven && \
-	ln -s /opt/maven/bin/mvn /usr/local/bin 			&& \
+	ln -s /opt/apache-maven-${MAVEN_VERSION} /opt/maven 	&& \
+	ln -s /opt/maven/bin/mvn /usr/local/bin 		&& \
 	rm -f /tmp/apache-maven.tar.gz
 
 ENV MAVEN_HOME /opt/maven
