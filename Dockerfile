@@ -39,7 +39,7 @@ RUN curl -sL https://deb.nodesource.com/setup_10.x | bash -  && \
     && npm i -g serverless    \
     && npm i -g aws-cdk
 
-RUN add-apt-repository ppa:jonathonf/python-3.6 \
+RUN apt-get install -y software-properties-common && add-apt-repository ppa:jonathonf/python-3.6 \
     && apt-get update && apt-get -y install unzip python3.6  
     
 RUN curl -O https://bootstrap.pypa.io/get-pip.py \
