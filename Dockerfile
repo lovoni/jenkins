@@ -11,9 +11,7 @@ RUN chmod +x /tmp/install-docker.sh
 RUN /tmp/install-docker.sh
 
 # Install python and pip
-RUN 	apt-get install -y make build-essential libssl-dev zlib1g-dev libbz2-dev \
-	&& libsqlite3-dev wget curl llvm libncurses5-dev libncursesw5-dev \
-	&& xz-utils tk-dev libffi-dev liblzma-dev
+RUN 	apt-get install -y make build-essential libssl-dev zlib1g-dev libbz2-dev 
 
 RUN cd /tmp && wget https://www.python.org/ftp/python/3.6.8/Python-3.6.8.tgz \
     	&& tar xvf Python-3.6.8.tgz \
