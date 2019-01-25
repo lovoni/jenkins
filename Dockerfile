@@ -10,6 +10,16 @@ COPY install-docker.sh /tmp/install-docker.sh
 RUN chmod +x /tmp/install-docker.sh
 RUN /tmp/install-docker.sh
 
+# Install python and pip
+RUN cd /tmp && wget https://www.python.org/ftp/python/3.6.8/Python-3.6.8.tgz \
+    	&& tar xvf Python-3.6.8.tgz \
+	&& cd Python-3.6.8 \
+	&& ./configure --enable-optimizations --with-ensurepip=install \
+	&& make -j8 \
+	&& make altinstall \
+	&& python3.6 
+
+
 # install maven
 RUN wget --no-verbose -O /tmp/apache-maven.tar.gz http://archive.apache.org/dist/maven/maven-3/${MAVEN_VERSION}/binaries/apache-maven-${MAVEN_VERSION}-bin.tar.gz
 # verify checksum
@@ -38,13 +48,13 @@ RUN curl -sL https://deb.nodesource.com/setup_10.x | bash -  && \
     && npm i -g mermaid       \
     && npm i -g serverless    \
     && npm i -g aws-cdk
-
-RUN apt-get install -y software-properties-common && apt-get -y install unzip python3.6  
     
-RUN curl -O https://bootstrap.pypa.io/get-pip.py \
-    && python3 get-pip.py \
-    && pip install --upgrade awscli \
-    && pip install --upgrade aws-sam-cli
+#RUN apt-get update && apt-get upgrade && apt-get -y install unzip python3.6  
+    
+#RUN curl -O https://bootstrap.pypa.io/get-pip.py \
+#    && python3 get-pip.py \
+#    && pip install --upgrade awscli \
+#    && pip install --upgrade aws-sam-cli
 
 # drop back to the regular jenkins user - good practice
 COPY plugins.txt /usr/share/jenkins/ref/plugins.txt
