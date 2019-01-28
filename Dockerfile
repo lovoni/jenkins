@@ -51,12 +51,9 @@ RUN curl -sL https://deb.nodesource.com/setup_10.x | bash -  && \
     && npm i -g serverless    \
     && npm i -g aws-cdk
     
-#RUN apt-get update && apt-get upgrade && apt-get -y install unzip python3.6  
-    
-#RUN curl -O https://bootstrap.pypa.io/get-pip.py \
-#    && python3 get-pip.py \
-#    && pip install --upgrade awscli \
-#    && pip install --upgrade aws-sam-cli
+RUN curl -O https://bootstrap.pypa.io/get-pip.py \
+    && python3 get-pip.py \
+    && pip install --upgrade aws-sam-cli
 
 # drop back to the regular jenkins user - good practice
 COPY plugins.txt /usr/share/jenkins/ref/plugins.txt
