@@ -52,8 +52,8 @@ RUN curl -sL https://deb.nodesource.com/setup_10.x | bash -  && \
     && npm i -g aws-cdk
     
 RUN curl -O https://bootstrap.pypa.io/get-pip.py \
-    && python3 get-pip.py 
-    && pip3 install awscli
+    && python3 get-pip.py \
+    && pip install awscli
 #    && pip install --upgrade aws-sam-cli
 # drop back to the regular jenkins user - good practice
 
